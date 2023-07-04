@@ -7,7 +7,7 @@ A ferramenta fornece informações valiosas como:
 - Identificação e versionamento de serviço nas portas de rede.
 - Diretório ocultos.
 
-## Começando
+## 🚀Começando
 
 Confira [quickstart](/Manual/quickstart.md) para saber como scanear seu primeiro projeto. 
 
