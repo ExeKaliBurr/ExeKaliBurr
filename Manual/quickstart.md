@@ -1,5 +1,5 @@
 ---
-title: Documentation
+título: Documentação
 layout: "layouts/doc"
 permalink: "/"
 ---
