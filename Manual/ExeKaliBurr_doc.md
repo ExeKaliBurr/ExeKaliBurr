@@ -20,7 +20,7 @@ Confira [quickstart](/Manual/quickstart.md) para saber como scanear seu primeiro
 ## Descrições Gerais
 
 Explicações de alguns conceitos mais profundos sobre o ExKaliBurr.
-- [Como ExKaliBurr funciona?](/Manual/workflow/)
-- [Tipos de scanners](/Manual/scanners/)
-- [Relatório](/Manual/reports/)
+- [Como ExKaliBurr funciona?](/Manual/workflow.md)
+- [Tipos de scanners](/Manual/scanners.md)
+- [Relatório](/Manual/reports.md)
   
