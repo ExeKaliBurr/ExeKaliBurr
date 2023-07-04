@@ -7,9 +7,9 @@ permalink: "/"
 # Quickstart
 Descubra seus riscos e vulnerabilidades de segurança em apenas alguns minutos. Neste guia, você instalará o ExeKaliburr, executará uma varredura de segurança em uma página web e visualizará os resultados. Vamos começar!
 
-# Instalando o ExeKaliburr
+# Executando o ExeKaliburr
 
-É possível instalar o ExeKaliburr a partir dos métodos abaixo:
+É possível executar o ExeKaliburr a partir dos métodos abaixo:
 
 ## Opções de execução
 
