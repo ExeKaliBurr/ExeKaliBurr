@@ -11,11 +11,11 @@ Descubra seus riscos e vulnerabilidades de segurança em apenas alguns minutos. 
 
 É possível instalar o ExeKaliburr a partir dos métodos abaixo:
 
-## Opções de instalação
+## Opções de execução
 
-### Instalar Script
+### Script
 
-A maneira mais comum de instalar o ExeKaliburr é com um script. Porém esse script só é indicado para sistemas operacionais Kalinux:
+A maneira mais comum de executar o ExeKaliburr é com um script. Porém esse script só é indicado para sistemas operacionais Kalinux:
 ```bash
 curl -sfL https://blablablaExeKaliburr.sh | sh
 ```
