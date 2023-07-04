@@ -15,7 +15,7 @@ A ferramenta fornece informações valiosas como:
 
 ## Começando
 
-Confira [quickstart](/Manual/quickstart) para saber como scanear seu primeiro projeto. 
+Confira [quickstart](/Manual/quickstart.md) para saber como scanear seu primeiro projeto. 
 
 ## Descrições Gerais
 
