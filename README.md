@@ -1,6 +1,6 @@
 # ExeKaliBurr
 
-O ExKaliBurr é uma ferramenta exploratória para sistemas web e tem como objetivo principal auxiliar os profissionais de segurança durante a realização da etapa de levantamento de informações em um pentest web. 
+O ExeKaliBurr é uma ferramenta exploratória para sistemas web e tem como objetivo principal auxiliar os profissionais de segurança durante a realização da etapa de levantamento de informações em um pentest web. 
 
 A ferramenta fornece informações valiosas como:
 - Identificação de endereços IP, Serviço DNS e Sub-sistemas Integrados.
