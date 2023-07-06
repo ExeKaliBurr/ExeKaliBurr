@@ -5,7 +5,7 @@ permalink: "/"
 ---
 
 # Quickstart
-Descubra seus riscos e vulnerabilidades de segurança em apenas alguns minutos. Neste guia, você instalará o ExeKaliburr, executará uma varredura de segurança em uma página web e visualizará os resultados. Vamos começar!
+Descubra seus riscos e vulnerabilidades de segurança de maneira simplificada. Neste guia, você instalará o ExeKaliburr, executará uma varredura de segurança em uma página web e visualizará os resultados. Vamos começar!
 
 # Executando o ExeKaliburr
 
@@ -15,7 +15,7 @@ Descubra seus riscos e vulnerabilidades de segurança em apenas alguns minutos. 
 
 ### Script
 
-A maneira mais comum de executar o ExeKaliburr é com um script. Porém esse script só é indicado para sistemas operacionais Kalinux:
+A maneira mais comum de executar o ExeKaliburr é com um script. Porém esse script só é indicado para sistemas operacionais Kali Linux:
 ```bash
 curl -sfL https://blablablaExeKaliburr.sh | sh
 ```
