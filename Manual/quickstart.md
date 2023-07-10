@@ -22,8 +22,11 @@ curl -sfL https://blablablaExeKaliburr.sh | sh
 ### Docker
 O ExeKaliburr também está disponível como uma imagem Docker no Docker Hub.
 
-Com o docker instalado, você pode executar o seguinte comando com os caminhos apropriados no lugar dos exemplos.
+Com o docker instalado, você pode executar os seguintes comandos:
 
 ```text
-docker run --rm -v /blablablaExeKaliburr
+docker pull exekalibuur/exekalibuur
+```
+```text
+docker run -it exekaliburr 
 ```
