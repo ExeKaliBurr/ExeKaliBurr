@@ -28,5 +28,5 @@ Com o docker instalado, você pode executar os seguintes comandos:
 docker pull exekalibuur/exekalibuur
 ```
 ```text
-docker run -it exekaliburr 
+docker run -it exekalibuur/exekalibuur 
 ```
