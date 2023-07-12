@@ -17,7 +17,7 @@ Descubra seus riscos e vulnerabilidades de segurança de maneira simplificada. N
 
 A maneira mais comum de executar o ExeKaliburr é com um script. Porém esse script só é indicado para sistemas operacionais Kali Linux:
 ```bash
-curl -O -L https://raw.githubusercontent.com/ExeKaliBurr/SBSeg2023/073bcd8638ae7e881653a001f41f7c95bd6fa85a/Source/Setup/setupExekaliburr.sh
+curl -O -L https://raw.githubusercontent.com/ExeKaliBurr/SBSeg2023/main/Source/Setup/setupExekaliburr.sh?token=GHSAT0AAAAAACE7BAY3GPKW7UITZWCSCCLMZFOZXFQ
 ```
 ### Docker
 O ExeKaliburr também está disponível como uma imagem Docker no Docker Hub.
