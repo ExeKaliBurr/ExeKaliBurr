@@ -15,4 +15,9 @@ Para executar o ExeKaliBurr, basta digitar o comando *kalibur* inserir o protoco
 ```text
 kalibur http juice-shop.herokuapp.com/#/
 ```
+### Detalhes
+- É possível pular as etapas do processo de scaneamento do ExeKaliburr pressionando `CTRL+C` .
+- O tempo de execução da etapa `Varredura de Diretórios` vai de depender da sua conexão de rede e do site que você está querendo scanear, pois esse é um processo de Brute Force.
+- Sempre que quiser gerar um novo relatório lembre-se  de renomear o relatório antigo ou removê-lo.
+
 
