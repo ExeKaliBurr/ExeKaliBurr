@@ -20,7 +20,8 @@ A maneira mais comum de executar o ExeKaliburr é com um script. Porém esse scr
 Com o Docker instalado, você pode baixar o script para executar o ExeKaliburr em qualquer distribuição Linux.
 
 ```bash
-curl -O -L https://github.com/ExeKaliBurr/SBSeg2023/blob/810765e7e4fa752dcbfc3b943ff49d3e56f2f906/Source/Setup/setupExekaliburr.sh
+curl -O -L https://raw.githubusercontent.com/ExeKaliBurr/SBSeg2023/main/Source/Setup/setupExekaliburr.sh
+
 ```
 ### Windows
 É possível executar o ExeKaliburr no Windows por meio da execução de um contêiner Docker.
@@ -36,7 +37,12 @@ docker run -it exekalibuur/exekalibuur
 ### Kali Linux
 Caso você esteja utilizando um sistema operacional Kali Linux, é possível a execução do Kalibur sem a instalação do Docker.
 ```bash
-curl -sfL https://github.com/ExeKaliBurr/SBSeg2023/blob/810765e7e4fa752dcbfc3b943ff49d3e56f2f906/Source/kalibur | sh -s -- -b /usr/local/bin
+curl -O -L https://raw.githubusercontent.com/ExeKaliBurr/SBSeg2023/main/Source/kalibur 
+```
+Depois execute os seguintes comandos:
+```bash
+sudo mv kalibur /usr/local/bin/
+sudo chmod +x /usr/local/bin/kalibur
 ```
 
 Para saber como scanear sua primeira aplicação web com o ExeKaliBurr confira [Scaneando meu primeiro projeto](/Manual/FirstScan.md).
