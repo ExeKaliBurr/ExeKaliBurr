@@ -44,4 +44,3 @@ Como descrito anteriormente, nossa ferramenta se foca espesificamente em auxilia
 
 Por se tratar de processos minuciosos, em alguns casos nossa ferramenta pode levar um longo período de tempo para finalizar suas explorações, dependendo de váriaveis fora de nosso escopo como qualidade de banda utilizada pelo usuário e também, da complexidade e tamanho do sistema avaliado.
 
-# Tipos de Scanners
