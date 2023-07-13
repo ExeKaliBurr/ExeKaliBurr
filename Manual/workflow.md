@@ -7,27 +7,23 @@ permalink: "/"
 # Como ExKaliBurr funciona?
 
 ```mermaid
+
 %%{ init: { 'flowchart': { 'curve': 'stepAfter' } } }%%
 flowchart TB
-    
-    direction TB
-    loadrule(Load rules) --> evalrule
-    scan(Start scan) --> parse(Enumerate and\n parse files)
-    parse --> AST
-    AST --> DNC
-    DNC --> df(Generate underlying \ndetection report)
-    df --> evalrule(Match and evaluate \nrules)
-    evalrule --> E(Generate report)
-    
-    subgraph AST[Generate AST]
-    direction LR
-    AST1(Tree sitter) --> |Processes source| AST2(AST)
-    end
-    
-
-    subgraph DNC[Detection Engine]
-    direction LR
-    dd(Detect data types) --> cd(Classify data types)
-    end
-    
+    A(Nome do Domínio e Protocolo) --> B(DNS Reverso e Hosts de Domínios Integrados)
+    B --> C(Endereçamento IP)
+     A --> C
+    A --> D(Sud-DNS de sistemas relacionados)
+    D --> C
+   C --> E(Identificação de portas)
+   C --> F(Varredura de Diretórios)
+   C --> H(Informações Gerais de Hosts)
+   E --> I(Versionamento de serviços)
+   F --> J(Detecção de Páginas sensíveis)
+   H --> K(Phishing e Engenharia Social)
+   I --> L(Exploração de Exploits)
+   J --> M(Ataques Web Direcionados)
+   M -->N(VULNERABILIDADES)
+   L -->N
+   K -->N
 ```
