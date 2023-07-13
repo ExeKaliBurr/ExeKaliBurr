@@ -1,9 +1,3 @@
----
-título: Documentação
-layout: "layouts/doc"
-permalink: "/"
----
-
 # Primeiros Passos
 Descubra seus riscos e vulnerabilidades de segurança de maneira simplificada. Neste guia, você instalará o ExeKaliburr, executará uma varredura de segurança em uma página web e visualizará os resultados. Vamos começar!
 
