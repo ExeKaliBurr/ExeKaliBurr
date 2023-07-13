@@ -10,7 +10,7 @@ Para iniciar a sua execução corretamente é necessário inserir o protocolo de
 zsh ./setupExekaliburr.sh http juice-shop.herokuapp.com/#/ 
 ```
 ### Windows e Kali Linux 
-
+Para executar o ExeKaliBurr, basta digitar o comando *kalibur* inserir o protocolo de comunicação e o nome do domínio do site:
 
 ```text
 kalibur http juice-shop.herokuapp.com/#/
