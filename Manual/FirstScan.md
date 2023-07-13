@@ -20,4 +20,6 @@ kalibur http juice-shop.herokuapp.com/#/
 - O tempo de execução da etapa `Varredura de Diretórios` vai de depender da sua conexão de rede e do site que você está querendo scanear, pois esse é um processo de Brute Force.
 - Sempre que quiser gerar um novo relatório lembre-se  de renomear o relatório antigo ou removê-lo.
 
+Para mais detalhes sobre o relatório confira [Relatório](/Manual/reports.md).
+
 
