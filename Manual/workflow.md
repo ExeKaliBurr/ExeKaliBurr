@@ -39,6 +39,9 @@ A partir do Input inicial do usuário, inserindo informações pública de Nome 
 
 Como descrito anteriormente, nossa ferramenta se foca espesificamente em auxiliar os profissionais de segurança durante a realização de uma das etapas existentes em um Pentest. Falando um pouco mais sobre a etapa em que atuamos, o Levantamento de Informações é a fase do processo em que o especialista em segurança tenta recolher o máximo possível de informações sobre o alvo que ele irá analisar, essas pesquisas são tradicionamente feitas por trabalhos manuais que demandavam muito tempo e esforço do profissional que estaria realizando os testes. Portanto, o ExeKaliBurr surge como solução para gerar um Levantamento de Informações de forma mais prática, realizando as buscas das principais informações de forma simplificada e possibilitanto que o especialista de segurança se foque nas próximas etapas do Pentest após receber o relatório gerado por nossa ferramenta.
 
+
 # Desvantagens
 
 Por se tratar de processos minuciosos, em alguns casos nossa ferramenta pode levar um longo período de tempo para finalizar suas explorações, dependendo de váriaveis fora de nosso escopo como qualidade de banda utilizada pelo usuário e também, da complexidade e tamanho do sistema avaliado.
+
+# Tipos de Scanners
