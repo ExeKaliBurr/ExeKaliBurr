@@ -1,9 +1,3 @@
----
-título: Documentação
-layout: "layouts/doc"
-permalink: "/"
----
-
 # O que é?
 
 O ExeKaliBurr é uma ferramenta exploratória voltada para auxiliar profissionais da área de Segurança Cibernética, durante a aplicação de uma das etapas existentes no processo de Pentest. Ele é pode ser descrito como um orquestrador de softwares, responsável por criar fluxos de Levantamento de informações, como os da metodologia descrita pelo esquema abaixo: 
