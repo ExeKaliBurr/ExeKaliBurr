@@ -11,7 +11,7 @@ A ferramenta fornece informações valiosas como:
 
 Confira [Primeiros passos](/Manual/quickstart.md) para saber como executar ExeKaliBurr no seu ambiente.
 
-Confira também [Scaneando meu primeiro projeto](/Manual/quickstart.md) e aprenda como scanear sua primeira aplicação web.
+Confira também [Scaneando meu primeiro projeto](/Manual/FirstScan.md) e aprenda como scanear sua primeira aplicação web.
 
 ## :mage_man: Descrições Gerais :mage_woman:
 
