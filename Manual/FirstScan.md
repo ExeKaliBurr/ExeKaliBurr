@@ -3,21 +3,15 @@ Para fins de demonstração, utilizaremos a aplicação web insegura OWASP Juice
 
 Para escolher a melhor forma de executar o ExeKaliBurr em seu ambiente, vá para [Primeiros passos](/Manual/quickstart.md).
 ### Script
-
+ao utilizar o script, durante a sua execução é necessário a introduzir
 
 ```bash
-
+zsh ./setupExekaliburr.sh http juice-shop.herokuapp.com/#/ 
 ```
-### Windows
+### Windows e Kali Linux 
 
 
 ```text
-
+kalibur http juice-shop.herokuapp.com/#/
 ```
-```text
 
-```
-### Kali Linux
-```bash
-
-```
