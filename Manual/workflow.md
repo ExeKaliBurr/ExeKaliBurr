@@ -15,7 +15,7 @@ flowchart TB
     A(Nome do Domínio e Protocolo) --> B(DNS Reverso e Hosts de Domínios Integrados)
     B --> C(Endereçamento IP)
      A --> C
-    A --> D(Sud-DNS de sistemas relacionados)
+    A --> D(Sub-DNS de sistemas relacionados)
     D --> C
    C --> E(Identificação de portas)
    C --> F(Varredura de Diretórios)
