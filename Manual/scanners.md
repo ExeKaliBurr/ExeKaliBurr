@@ -1,9 +1,3 @@
----
-título: Documentação
-layout: "layouts/doc"
-permalink: "/"
----
-
 # Identificação de Portas
 
 O ExeKaliBurr possui a funcionalidade da varredura de portas, uma aplicação que nos permite fazer a exploração na infraestrutura do nosso sistema-alvo. Assim, é possível adquirir informações sobre as tecnologias e serviços que estão sendo executados pela vítima das explorações, através da utilização do software `NMAP`.
