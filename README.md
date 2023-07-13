@@ -17,5 +17,5 @@ Confira também [Scaneando meu primeiro projeto](/Manual/FirstScan.md) e aprenda
 
 Explicações de alguns conceitos mais profundos sobre o ExKaliBurr.
 - [Como ExeKaliBurr funciona?](/Manual/workflow.md)
-- [Tipos de scanners](/Manual/scanners.md)
-- [Relatório](/Manual/reports.md)
+- [Principais Funcionalidades](/Manual/scanners.md)
+- [Relatório de Exploração](/Manual/reports.md)
