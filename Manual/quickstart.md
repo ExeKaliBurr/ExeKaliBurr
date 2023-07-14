@@ -1,24 +1,24 @@
 # Primeiros Passos
-Descubra seus riscos e vulnerabilidades de segurança de maneira simplificada. Neste guia, você instalará o ExeKaliburr, executará uma varredura de segurança em uma página web e visualizará os resultados. Vamos começar!
+Descubra seus riscos e vulnerabilidades de segurança de maneira simplificada. Neste guia, você encontrará informações sobre as opções de execução do ExeKaliBurr e poderá escolher qual delas é mais adequada ao seu ambiente. Vamos começar!
 
-# Executando o ExeKaliburr
+# Executando o ExeKaliBurr
 
-É possível executar o ExeKaliburr a partir dos métodos abaixo:
+É possível executar o ExeKaliBurr a partir dos métodos abaixo:
 
 ## Opções de execução
 
 ### Script
 
-A maneira mais comum de executar o ExeKaliburr é com um script. Porém esse script só é indicado para Distruibuições Linux.
+A maneira mais comum de executar o ExeKaliBurr é com um script. Porém esse script só é indicado para Distruibuições Linux.
 
-Com o Docker instalado, você pode baixar o script para executar o ExeKaliburr em qualquer distribuição Linux.
+Com o Docker instalado, você pode baixar o script para executar o ExeKaliBurr em qualquer distribuição Linux.
 
 ```bash
 curl -O -L https://raw.githubusercontent.com/ExeKaliBurr/SBSeg2023/main/Source/Setup/setupExekaliburr.sh
 
 ```
 ### Windows
-É possível executar o ExeKaliburr no Windows por meio da execução de um contêiner Docker.
+É possível executar o ExeKaliBurr no Windows por meio da execução de um contêiner Docker.
 
 Com o docker instalado, você pode executar os seguintes comandos:
 
