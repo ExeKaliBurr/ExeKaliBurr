@@ -10,4 +10,4 @@ O resultado final da execução do ExeKaliBurr é um relatório técnico, conten
 * DNS Reverso do Domínio
 * Sub-DNS & Sistemas Integrados
 
-Para entender melhor como o ExeKaliburr funciona veja [Como ExeKaliBurr funciona?](/Manual/workflow.md)
+Para entender melhor como o ExeKaliBurr funciona veja [Como ExeKaliBurr funciona?](/Manual/workflow.md)
