@@ -1,0 +1,277 @@
+#!/bin/bash
+
+# Scripts ~~Exe.KaliBur~~ versão Beta
+# Autor: Daniel Rezende de Barros
+# Curso de Pós-Graduação em Segurança Cibernética do LSBD na UFC
+# Data de Edição: 09/09/2023
+
+# Tela 1 - Caixa de Mensagem e Boas-Vindas
+
+whiptail --title "ExeKaliBurr Versão 1.0" --msgbox "Bem-vindo ao ExeKaliBurr! Uma ferramenta auxiliar para a realização de Levantamento de Informações em Testes de Intrusão ou Pentests WEB. O ExeKaliBurr é um orquestrador de softwares, voltado especificamente para funcionalidades de busca, responsável por ordenar um fluxo de exploração para encontrar dados e informações relacionadas a alguma página ou serviço online. 
+
+Para Utilizar a Interface da Ferramenta utilize as teclas: '←', '↑', '→', '↓', 'ENTER', 'TAB' e 'SPACE'." --fb 25 50; 
+
+# Variável ESCOLHA para alimentar a repetição do Menu Principal
+esc=-1
+
+# Loop principal que irá exibir o Menu Central do Script
+while [ $esc -ne 0 ]		# Enquanto ESCOLHA for diferente de zero...
+do	# Faça
+	# Variável ESCOLHA vai direcionar o Fluxo do Programa
+	esc=$(whiptail --title "ExeKaliBurr v1.0" --menu "Selecione uma das Funcionalidade Abaixo: " --fb 25 50 5 "1" "Identificação de Endereços IP" "2" "Scanner de Portas de Redes" "3" "Varredura de Diretórios" "4" "Informações Gerais do Domínio" "5" "Captura de Banner da Página HTML" "6" "DNS Reverso do Domínio" "7" "Sub-DNS & Sistemas Integrados" "8" "Relatório de Exploração Completo" "9" "Sair"  3>&1 1>&2 2>&3)
+	
+	# Variável de Ambiente "?" segura o Status de saída do whiptail Menu
+	if [  $? -eq 0 ]	# Se a Variável de Ambiente Segura Status 0 para continuar, então vamos as Funcionalidades...
+	then
+		if [ $esc -eq 1 ]	# Se a Variável ESCOLHA segurar valor 1, Funcionalidade de Descobrir IP
+		then
+			# Entrada de Dados do Usuário, ele irá inserir o nome do site do Serviço DNS, salvo na variável endereco
+			endereco=$(whiptail --title "Identificação de Endereços IP" --inputbox "Digite o Domínio do Site (Ex: google.com) " --fb 10 60 3>&1 1>&2 2>&3)
+			saida=$?	# Variável que vai segurar o status do botão... 0 se existe dado e 1 se o usuário apertou Cancelar
+			
+			if [  $saida == 0 ]
+			then
+			
+				# Variável IP vai armazenar o resultado do comando Host, filtrando apenas o valor do endereço IP através do | awk -F " " '{print $4}' -> onde 4 é a coluna depois dos espaços
+				ip=$(host $endereco | grep -m 1 address | awk -F " " '{print $4}')
+			
+				# Exibição de Resultados com uma mensage box
+				whiptail --title "Identificação de Endereço IP" --msgbox "O Endereço IP Correspondente ao Site $endereco é: $ip" --fb 25 50
+			fi
+			
+		elif [ $esc -eq 2 ]
+		then
+			ip=$(whiptail --title "Scanner de Portas de Redes" --inputbox "Digite o Endereço IP que Será Analisado, como por Exemplo: 192.168.0.1" --fb 10 60 3>&1 1>&2 2>&3)
+			saida=$?	# Variável que vai segurar o status do botão... 0 se existe dado e 1 se o usuário apertou Cancelar
+			
+			if [  $saida == 0 ]	# Status do inputbox da func2
+			then
+			
+				#portas=$(nmap --open $ip | grep open | awk -F" " '{print $1}')
+				#servicos=$(nmap -sV $ip | grep open | awk -F" " '{print $3}')
+				#versoes=$(nmap -sV $ip | grep open | awk -F" " '{print $4}')
+				portas=$(nmap -sV $ip | grep open)
+				whiptail --title "Port Scanning do IP: $ip" --msgbox "Portas -  Estado - Serviços - Versões\n$portas" --fb 25 65
+			fi
+
+		elif [ $esc -eq 3 ]
+		then
+			
+			ende=$(whiptail --title "Varredura de Diretórios" --inputbox "Insira o Protocolo de Comunicação e o Nome da Página do Site (Ex: www.google.com)" --fb 10 60 3>&1 1>&2 2>&3)
+			saida=$?	# Variável que vai segurar o status do botão... 0 se existe dado e 1 se o usuário apertou Cancelar
+			
+			if [  $saida == 0 ]	# Status do inputbox da func3
+			then
+				#dir=$(dirb $ende -w | grep CODE)
+				# Colocamos o Primeiro Valor como Zero para o tamanho da caixa se ajustar automaticamente a saída da operação
+				ip=$(host $ende | grep -m 1 address | awk -F " " '{print $4}')
+				dir=$(gobuster dir -u $ip -w directory-list-2.3-medium.txt -b 301,302,404)
+				whiptail --title "Varredura de Diretórios do Site: $ende" --msgbox "Diretórios Ocultos Ativos: \n$dir" --fb 0 65
+			fi
+			
+		elif [ $esc -eq 4 ]
+		then
+			ip=$(whiptail --title "Informações Gerais do Domínio" --inputbox "Digite o Endereço IP que Será Analisado, como por Exemplo: 192.168.0.1" --fb 10 60 3>&1 1>&2 2>&3)
+			saida=$?	# Variável que vai segurar o status do botão... 0 se existe dado e 1 se o usuário apertou Cancelar
+			
+			if [  $saida == 0 ]	# Status do inputbox da func4 WhoIs
+			then
+				dados=$(whois $ip)
+				whiptail --title "Informações do Site Correspondente ao IP: $ip" --msgbox "Dados: \n$dados" --fb 0 65
+			fi
+
+			
+		elif [ $esc -eq 5 ]
+		then
+			ende=$(whiptail --title "Captura de Banner da Página HTML" --inputbox "Digite o Domínio do Site (Ex: google.com)" --fb 10 60 3>&1 1>&2 2>&3)
+			saida=$?	# Variável que vai segurar o status do botão... 0 se existe dado e 1 se o usuário apertou Cancelar
+			
+			if [  $saida == 0 ]	# Status do inputbox da func5 CURL
+			then
+				banner=$(curl -v $ende)
+				whiptail --title "Informações do Site: $ende" --msgbox "HTML da Página Inicial: \n$banner" --fb 0 65
+			fi
+			
+		elif [ $esc -eq 6 ]
+		then
+			ip=$(whiptail --title "DNS Reverso do Domínio" --inputbox "Digite o Endereço IP que Será Analisado, como por Exemplo: 192.168.0.1" --fb 10 60 3>&1 1>&2 2>&3)
+			saida=$?	# Variável que vai segurar o status do botão... 0 se existe dado e 1 se o usuário apertou Cancelar
+			
+			if [  $saida == 0 ]	# Status do inputbox da func6 DNSRecon
+			then
+				reverso=$(dnsrecon -r $ip/24 -n 8.8.8.8) # 8.8.8.8 pedindo ajuda pro Google fazer o DNSRecon
+				whiptail --title "DNS Reverso do IP: $ip" --msgbox "Sistemas Vinculados ao Alvo Pesquisado: \n$reverso" --fb 0 65
+			fi
+			
+			
+		elif [ $esc -eq 7 ]
+		then
+			#whiptail --title "Funcionalidade 7" --msgbox "Em Construção..." --fb 25 50
+			
+			ende=$(whiptail --title "Sub-DNS & Sistemas Integrados" --inputbox "Digite o Domínio do Site (Ex: google.com)" --fb 10 60 3>&1 1>&2 2>&3)
+			saida=$?	# Variável que vai segurar o status do botão... 0 se existe dado e 1 se o usuário apertou Cancelar
+			
+			if [  $saida == 0 ]	# Status do inputbox da func6 DNSRecon
+			then
+				subdns=$(dnsmap $ende)	
+				whiptail --title "Sub-DNS do Site: $ende" --msgbox "Sistemas Vinculados ao Alvo Pesquisado: \n$subdns" --fb 0 65
+			fi
+			
+		elif [ $esc -eq 8 ]
+		then
+			#whiptail --title "Funcionalidade 8" --msgbox "Em Construção..." --fb 25 50
+			
+						
+			proto=$(whiptail --title "Exploração Completa" --inputbox "Digite o Protocolo do Site, 'http' ou 'https'" --fb 10 60 3>&1 1>&2 2>&3)
+			saida=$?	# Variável que vai segurar o status do botão... 0 se existe dado e 1 se o usuário apertou Cancelar
+			
+			ende=$(whiptail --title "Exploração Completa" --inputbox "Digite o Domínio do Site (Ex: google.com)" --fb 10 60 3>&1 1>&2 2>&3)
+			saida=$?	# Variável que vai segurar o status do botão... 0 se existe dado e 1 se o usuário apertou Cancelar
+			
+			if [  $saida == 0 ]	# Script do kaliburr.sh
+			then
+				
+				endereco=$proto://$ende
+				
+				figlet ExeKaliBurr v1.0 >> relatorio.txt
+				echo "By: Drezens" >> relatorio.txt
+
+				while true	# Laço para atualizar a barra de progresso
+				do
+					echo -n =
+					sleep 1
+					done &
+					trap "kill $!" SIGTERM SIGKILL	# Processo para acompanhar o progresso dos scripts
+					echo " "
+					echo "####################################"
+					echo "###   Realizando Exploração...   ###"
+					echo "####################################"
+					echo " "
+					
+					
+					echo " " >> relatorio.txt
+					echo "###########################################" >> relatorio.txt
+					echo "### 	Identificação de Endereço IP 	###" >> relatorio.txt
+					echo "###########################################" >> relatorio.txt
+					echo " " >> relatorio.txt
+					echo "Alias Pesquisado: $ende" >> relatorio.txt
+
+					#ip=$(host $ende | grep address | cut -d " " -f4) # Primeira Forma de achar IP pelo Host
+					ip=$(whatweb -v $ende | grep IP | cut -d " " -f10)	# # Segunda Forma de achar IP pelo WhatWeb
+					echo "Endereço IP Descoberto:$ip" >> relatorio.txt
+					echo " " >> relatorio.txt
+					echo "Outras Informações Relacionadas aos Endereçamentos IP do Alvo: " >> relatorio.txt
+					iphost=$(host $ende)	# Variável IPhost para armazenar informações do serviço Host
+					echo "$iphost" >> relatorio.txt 
+					echo "> Identificações de Endereçamentos IP ✔"
+
+
+					echo " " >> relatorio.txt
+					echo "############################################" >> relatorio.txt
+					echo "### 	Scanner de Portas de Redes	 ###" >> relatorio.txt
+					echo "############################################" >> relatorio.txt
+					echo " " >> relatorio.txt
+					portas=$(nmap -sV $ip | grep open)
+
+					echo "Portas	Estados	Serviços	Versões" >> relatorio.txt
+					echo "$portas" >> relatorio.txt
+					echo "> Scanner de Portas ✔"
+					
+					
+					echo " " >> relatorio.txt
+					echo "###################################" >> relatorio.txt
+					echo "###	Varredura de Diretórios	###" >> relatorio.txt
+					echo "###################################" >> relatorio.txt
+					echo " " >> relatorio.txt
+					
+					# Mexi aqui dia 27-05 ... to tendo problemas com o Gobuster, vou voltar a usar o dirb
+					# Voltamos pro Gobuster pq agora o Dirb ta dando problema 10-09
+					dir=$(gobuster dir -u $ip -w directory-list-2.3-medium.txt -b 301,302,404)
+					
+					#dir=$(dirb $endereco -w -r | grep CODE)	# -r é ñ recurciva -w é não para com erro
+					echo "$dir" >> relatorio.txt
+					echo "> Varredura de Diretórios ✔"
+					
+					
+					echo " " >> relatorio.txt
+					echo " " >> relatorio.txt
+					echo "############################################" >> relatorio.txt
+					echo "### 	Informações Gerais do Domínio	 ###" >> relatorio.txt
+					echo "############################################" >> relatorio.txt
+					echo " " >> relatorio.txt
+					dados=$(whois $ip)	# Estamos fazendo a pesquisa dos dados por protocolo WhoIs buscando pelo IP do alvo
+					echo "$dados" >> relatorio.txt
+					echo " " >> relatorio.txt
+					echo " " >> relatorio.txt
+					dados=$(whatweb -v $ende)
+					echo "$dados" >> relatorio.txt
+					echo "> Levantamento de Informações Gerais ✔"
+					
+					
+					echo " " >> relatorio.txt
+					echo " " >> relatorio.txt
+					echo "####################################################" >> relatorio.txt
+					echo "### 	Banner da Página HTML Inicial do Alvo	 ###" >> relatorio.txt
+					echo "####################################################" >> relatorio.txt
+					echo " " >> relatorio.txt
+					banner=$(curl -v $ende)
+					echo "$banner" >> relatorio.txt
+					echo "> Banner da Página HTML Inicial ✔"
+
+
+					echo " " >> relatorio.txt
+					echo "####################################" >> relatorio.txt
+					echo "### 	DNS Reverso do Domínio	 ###" >> relatorio.txt
+					echo "####################################" >> relatorio.txt
+					echo " " >> relatorio.txt
+					reverso=$(dnsrecon -r $ip/24 -n 8.8.8.8)	# Gambiarra para colocar o /24 no fim do IP alvo, 8.8.8.8 pedindo ajuda pro Google fazer o recon
+					echo "$reverso" >> relatorio.txt
+					echo "> DNS Reverso do Domínio ✔"
+
+
+					echo " " >> relatorio.txt
+					echo "############################################" >> relatorio.txt
+					echo "### 	Sub-DNS & Sistemas Integrados	 ###" >> relatorio.txt
+					echo "############################################" >> relatorio.txt
+					echo " " >> relatorio.txt
+					subdns=$(dnsmap $ende)		# Por causa dessa função aqui eu vou precisar mudar uma caralhada de coisa... ela ñ gosta dos protocolos http ou https
+					echo "$subdns" >> relatorio.txt
+					echo "> Sub-DNS & Sistemas Integrados ✔"
+
+
+					echo " " >> relatorio.txt
+					data=$(date)
+					echo "Exploração Realizada em: $data" >> relatorio.txt
+					
+					#clear
+					echo " "
+					echo "=> Exploração Finalizada! ✔ "
+					#echo "=> \033[32m;5m Exploração Finalizada! ✔ \033[m" # testar pra ver se a mensagem fica verdinha e piscando
+				kill $!
+					
+				whiptail --title "Exploração Finalizada, Alvo Analisado: $ende" --msgbox "O Levantamento de Informações foi finalizado! O arquivo chamado 'relatorio.txt' armazenou todos os dados descobertos e foi salvo no mesmo diretório onde o ExeKaliBurr foi executado." --fb 25 65
+			fi
+			
+		elif [ $esc -eq 9 ]	# Escolha Funcionalidade de Sair
+		then
+			# Vamos Certificar que o usuário quer sair
+			whiptail --title "Finalizar Explorações" --yes-button "Continuar" --no-button "Encerrar" --yesno "Deseja Realmente Encerrar o ExeKaliBurr?" --fb 10 50;
+			# Se a Variável de Ambiente do whiptail yesno for 1 então o usuário tem certeza de que quer encerrar o script
+			if [ $? -eq 1 ]
+			then
+				break
+			fi
+		fi
+	
+	else	# Caso em que o usuário selecionou Encerrar no Menu Principal
+		# Vamos Certificar que o usuário quer sair
+		whiptail --title "Finalizar Explorações" --yes-button "Continuar" --no-button "Encerrar" --yesno "Deseja Realmente Encerrar o ExeKaliBurr?" --fb 10 50;
+			if [ $? -eq 1 ]
+			then
+				break
+			else
+				# Caso Contrário onde o usuário selecionou Encerrar o Script sem querer, voltamos ao menu principal então
+				esc=-1
+			fi
+	fi
+done
