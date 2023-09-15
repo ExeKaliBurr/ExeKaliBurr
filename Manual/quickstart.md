@@ -7,27 +7,18 @@ Descubra seus riscos e vulnerabilidades de segurança de maneira simplificada. N
 
 ## Opções de execução
 
-### Script
-
-A maneira mais comum de executar o ExeKaliBurr é com um script. Porém esse script só é indicado para Distruibuições Linux.
-
-Com o Docker instalado, você pode baixar o script para executar o ExeKaliBurr em qualquer distribuição Linux.
-
-```bash
-curl -O -L https://raw.githubusercontent.com/ExeKaliBurr/SBSeg2023/main/Source/Setup/setupExekaliburr.sh
-
-```
 ### Windows
 É possível executar o ExeKaliBurr no Windows por meio da execução de um contêiner Docker.
 
 Com o docker instalado, você pode executar os seguintes comandos:
 
 ```text
-docker pull exekalibuur/exekalibuur
+docker pull exekalibuur/exekalibuur:latest
 ```
 ```text
 docker run -it exekalibuur/exekalibuur 
 ```
+Lembre-se de desativar antivirus e vpn para ao ExeKaliburr poder performar normalmente.
 ### Kali Linux
 Caso você esteja utilizando um sistema operacional Kali Linux, é possível a execução do Kalibur sem a instalação do Docker.
 ```bash
@@ -35,9 +26,9 @@ curl -O -L https://raw.githubusercontent.com/ExeKaliBurr/SBSeg2023/main/Source/k
 ```
 Depois execute os seguintes comandos:
 ```bash
-sudo mv kalibur /usr/local/bin/
-sudo chmod +x /usr/local/bin/kalibur
+sudo mv exekaliburr /usr/local/bin/
+sudo chmod +x /usr/local/bin/exekaliburr
 ```
-
+Lembre-se de executar o terminal na pasta onde se encontra a lista de bruteforce `directory-list-2.3-medium.txt`
 Para saber como scanear sua primeira aplicação web com o ExeKaliBurr confira [Scaneando meu primeiro projeto](/Manual/FirstScan.md).
 
