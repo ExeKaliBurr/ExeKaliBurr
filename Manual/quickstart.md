@@ -13,10 +13,10 @@ Descubra seus riscos e vulnerabilidades de segurança de maneira simplificada. N
 Com o docker instalado, você pode executar os seguintes comandos:
 
 ```text
-docker pull exekalibuur/exekalibuur:latest
+docker pull exekaliburr/exekaliburr:latest
 ```
 ```text
-docker run -it exekalibuur/exekalibuur 
+docker run -it exekaliburr/exekaliburr 
 ```
 Lembre-se de desativar antivirus e vpn para ao ExeKaliburr poder performar normalmente.
 ### Kali Linux
