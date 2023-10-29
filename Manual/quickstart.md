@@ -22,7 +22,7 @@ Lembre-se de desativar antivirus e vpn para ao ExeKaliburr poder performar norma
 ### Kali Linux
 Caso você esteja utilizando um sistema operacional Kali Linux, é possível a execução do Kalibur sem a instalação do Docker.
 ```bash
-curl -O -L https://raw.githubusercontent.com/ExeKaliBurr/SBSeg2023/main/Source/kalibur 
+curl -O -L https://raw.githubusercontent.com/ExeKaliBurr/SBSeg2023/main/Source/exekaliburr 
 ```
 Depois execute os seguintes comandos:
 ```bash
